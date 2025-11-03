@@ -4,8 +4,8 @@ ext=$?
 if [[ $ext -ne 0 ]]; then
         exit $ext
 fi
-sudo setcap cap_net_admin=eip /mnt/c/Users/wekno/Desktop/RUST/trust/target/release/trust
-/mnt/c/Users/wekno/Desktop/RUST/trust/target/release/trust &
+sudo setcap cap_net_admin=eip <PROJECT_FOLDER>/target/release/trust
+<PROJECT_FOLDER>/target/release/trust &
 pid=$!
 sudo ip addr add 192.168.0.1/24 dev tun0
 sudo ip link set up dev tun0
